@@ -164,13 +164,50 @@ def create_output_creation_program() -> ArgumentParser:
 	group_output_creation.add_argument('--output-video-quality', help = wording.get('help.output_video_quality'), type = int, default = config.get_int_value('output_creation', 'output_video_quality', '80'), choices = ffedit.choices.output_video_quality_range, metavar = create_int_metavar(ffedit.choices.output_video_quality_range))
 	job_store.register_step_keys([ 'output_image_quality', 'output_image_resolution', 'output_audio_encoder', 'output_audio_quality', 'output_audio_volume', 'output_video_encoder', 'output_video_preset', 'output_video_quality', 'output_video_resolution', 'output_video_fps' ])
 	return program
-	available_processors = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/processors/modules') ]
-	available_ui_layouts = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/uis/layouts') ]
+
+
+def create_processors_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_processors = program.add_argument_group('processors')
+	group_processors.add_argument('--processors', help = wording.get('help.processors'), default = config.get_str_list('processors', 'processors', 'face_swapper'), choices = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/processors/modules') ], nargs = '+')
+	for processor_module in get_processors_modules(config.get_str_list('processors', 'processors', 'face_swapper')):
+		processor_module.register_args(program)
+	job_store.register_step_keys([ 'processors' ])
+	return program
+
+
+def create_uis_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_uis = program.add_argument_group('uis')
+	group_uis.add_argument('--open-browser', help = wording.get('help.open_browser'), action = 'store_true', default = config.get_bool_value('uis', 'open_browser'))
+	group_uis.add_argument('--ui-layouts', help = wording.get('help.ui_layouts'), default = config.get_str_list('uis', 'ui_layouts', 'default'), choices = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/uis/layouts') ], nargs = '+')
 	group_uis.add_argument('--ui-workflow', help = wording.get('help.ui_workflow'), default = config.get_str_value('uis', 'ui_workflow', 'instant_runner'), choices = ffedit.choices.ui_workflows)
+	job_store.register_job_keys([ 'open_browser', 'ui_layouts', 'ui_workflow' ])
+	return program
+
+
+def create_download_providers_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_download = program.add_argument_group('download')
 	group_download.add_argument('--download-providers', help = wording.get('help.download_providers').format(choices = ', '.join(ffedit.choices.download_providers)), default = config.get_str_list('download', 'download_providers', ' '.join(ffedit.choices.download_providers)), choices = ffedit.choices.download_providers, nargs = '+', metavar = 'DOWNLOAD_PROVIDERS')
+	job_store.register_job_keys([ 'download_providers' ])
+	return program
+
+
+def create_download_scope_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_download = program.add_argument_group('download')
 	group_download.add_argument('--download-scope', help = wording.get('help.download_scope'), default = config.get_str_value('download', 'download_scope', 'lite'), choices = ffedit.choices.download_scopes)
+	job_store.register_job_keys([ 'download_scope' ])
+	return program
+
+
+def create_benchmark_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_benchmark = program.add_argument_group('benchmark')
 	group_benchmark.add_argument('--benchmark-resolutions', help = wording.get('help.benchmark_resolutions'), default = config.get_str_list('benchmark', 'benchmark_resolutions', get_first(ffedit.choices.benchmark_resolutions)), choices = ffedit.choices.benchmark_resolutions, nargs = '+')
 	group_benchmark.add_argument('--benchmark-cycle-count', help = wording.get('help.benchmark_cycle_count'), type = int, default = config.get_int_value('benchmark', 'benchmark_cycle_count', '5'), choices = ffedit.choices.benchmark_cycle_count_range)
+	job_store.register_job_keys([ 'benchmark_resolutions', 'benchmark_cycle_count' ])
 	return program
 
 
