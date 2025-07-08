@@ -150,11 +150,20 @@ def create_frame_extraction_program() -> ArgumentParser:
 	group_frame_extraction.add_argument('--trim-frame-start', help = wording.get('help.trim_frame_start'), type = int, default = config.get_int_value('frame_extraction', 'trim_frame_start'))
 	group_frame_extraction.add_argument('--trim-frame-end', help = wording.get('help.trim_frame_end'), type = int, default = config.get_int_value('frame_extraction', 'trim_frame_end'))
 	group_frame_extraction.add_argument('--temp-frame-format', help = wording.get('help.temp_frame_format'), default = config.get_str_value('frame_extraction', 'temp_frame_format', 'png'), choices = ffedit.choices.temp_frame_formats)
+	job_store.register_step_keys([ 'trim_frame_start', 'trim_frame_end', 'temp_frame_format' ])
+	return program
+
+
+def create_output_creation_program() -> ArgumentParser:
+	program = ArgumentParser(add_help = False)
+	group_output_creation = program.add_argument_group('output creation')
 	group_output_creation.add_argument('--output-image-quality', help = wording.get('help.output_image_quality'), type = int, default = config.get_int_value('output_creation', 'output_image_quality', '80'), choices = ffedit.choices.output_image_quality_range, metavar = create_int_metavar(ffedit.choices.output_image_quality_range))
 	group_output_creation.add_argument('--output-audio-quality', help = wording.get('help.output_audio_quality'), type = int, default = config.get_int_value('output_creation', 'output_audio_quality', '80'), choices = ffedit.choices.output_audio_quality_range, metavar = create_int_metavar(ffedit.choices.output_audio_quality_range))
 	group_output_creation.add_argument('--output-audio-volume', help = wording.get('help.output_audio_volume'), type = int, default = config.get_int_value('output_creation', 'output_audio_volume', '100'), choices = ffedit.choices.output_audio_volume_range, metavar = create_int_metavar(ffedit.choices.output_audio_volume_range))
 	group_output_creation.add_argument('--output-video-preset', help = wording.get('help.output_video_preset'), default = config.get_str_value('output_creation', 'output_video_preset', 'veryfast'), choices = ffedit.choices.output_video_presets)
 	group_output_creation.add_argument('--output-video-quality', help = wording.get('help.output_video_quality'), type = int, default = config.get_int_value('output_creation', 'output_video_quality', '80'), choices = ffedit.choices.output_video_quality_range, metavar = create_int_metavar(ffedit.choices.output_video_quality_range))
+	job_store.register_step_keys([ 'output_image_quality', 'output_image_resolution', 'output_audio_encoder', 'output_audio_quality', 'output_audio_volume', 'output_video_encoder', 'output_video_preset', 'output_video_quality', 'output_video_resolution', 'output_video_fps' ])
+	return program
 	available_processors = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/processors/modules') ]
 	available_ui_layouts = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/uis/layouts') ]
 	group_uis.add_argument('--ui-workflow', help = wording.get('help.ui_workflow'), default = config.get_str_value('uis', 'ui_workflow', 'instant_runner'), choices = ffedit.choices.ui_workflows)
