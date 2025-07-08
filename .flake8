@@ -1,0 +1,3 @@
+# .flake8 for ffedit (renamed from facefusion)
+per-file-ignores = ffedit.py:E402, install.py:E402
+application_import_names = ffedit
