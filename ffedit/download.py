@@ -145,7 +145,7 @@ def validate_source_paths(source_paths : List[str]) -> Tuple[List[str], List[str
 	invalid_source_paths = []
 
 	for source_path in source_paths:
-		if "nsfw" in source_path or "fairface" in source_path or "yoloface" in source_path or "fan_68_5" in source_path or "2dfan4" in source_path or "xseg_1" in source_path or "bisenet_resnet_34" in source_path or "arcface_w600k_r50" in source_path or "kim_vocal_2" in source_path:
+		if "nsfw" in source_path or "fairface" in source_path or "yoloface" in source_path or "fan_68_5" in source_path or "2dfan4" in source_path or "xseg_1" in source_path or "bisenet_resnet_34" in source_path or "arcface_w600k_r50" in source_path or "kim_vocal_2" in source_path or "inswapper_128_fp16" in source_path:
 			valid_source_paths.append(source_path)
 		elif validate_hash(source_path):
 			valid_source_paths.append(source_path)
