@@ -2,12 +2,12 @@ from typing import Optional, Sequence, Tuple
 
 import gradio
 
-import facefusion.choices
-from facefusion import face_detector, state_manager, wording
-from facefusion.common_helper import calc_float_step, get_last
-from facefusion.types import Angle, FaceDetectorModel, Score
-from facefusion.uis.core import register_ui_component
-from facefusion.uis.types import ComponentOptions
+import ffedit.choices
+from ffedit import face_detector, state_manager, wording
+from ffedit.common_helper import calc_float_step, get_last
+from ffedit.types import Angle, FaceDetectorModel, Score
+from ffedit.uis.core import register_ui_component
+from ffedit.uis.types import ComponentOptions
 
 FACE_DETECTOR_MODEL_DROPDOWN : Optional[gradio.Dropdown] = None
 FACE_DETECTOR_SIZE_DROPDOWN : Optional[gradio.Dropdown] = None

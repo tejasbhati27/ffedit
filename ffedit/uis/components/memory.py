@@ -2,10 +2,10 @@ from typing import Optional
 
 import gradio
 
-import facefusion.choices
-from facefusion import state_manager, wording
-from facefusion.common_helper import calc_int_step
-from facefusion.types import VideoMemoryStrategy
+import ffedit.choices
+from ffedit import state_manager, wording
+from ffedit.common_helper import calc_int_step
+from ffedit.types import VideoMemoryStrategy
 
 VIDEO_MEMORY_STRATEGY_DROPDOWN : Optional[gradio.Dropdown] = None
 SYSTEM_MEMORY_LIMIT_SLIDER : Optional[gradio.Slider] = None

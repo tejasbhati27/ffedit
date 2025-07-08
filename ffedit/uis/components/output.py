@@ -3,8 +3,8 @@ from typing import Optional
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.uis.core import register_ui_component
+from ffedit import state_manager, wording
+from ffedit.uis.core import register_ui_component
 
 OUTPUT_PATH_TEXTBOX : Optional[gradio.Textbox] = None
 OUTPUT_IMAGE : Optional[gradio.Image] = None

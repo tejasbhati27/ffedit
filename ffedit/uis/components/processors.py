@@ -2,10 +2,10 @@ from typing import List, Optional
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.filesystem import get_file_name, resolve_file_paths
-from facefusion.processors.core import get_processors_modules
-from facefusion.uis.core import register_ui_component
+from ffedit import state_manager, wording
+from ffedit.filesystem import get_file_name, resolve_file_paths
+from ffedit.processors.core import get_processors_modules
+from ffedit.uis.core import register_ui_component
 
 PROCESSORS_CHECKBOX_GROUP : Optional[gradio.CheckboxGroup] = None
 

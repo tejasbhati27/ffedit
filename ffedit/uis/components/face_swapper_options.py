@@ -2,12 +2,12 @@ from typing import List, Optional, Tuple
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.common_helper import get_first
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.core import load_processor_module
-from facefusion.processors.types import FaceSwapperModel
-from facefusion.uis.core import get_ui_component, register_ui_component
+from ffedit import state_manager, wording
+from ffedit.common_helper import get_first
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.core import load_processor_module
+from ffedit.processors.types import FaceSwapperModel
+from ffedit.uis.core import get_ui_component, register_ui_component
 
 FACE_SWAPPER_MODEL_DROPDOWN : Optional[gradio.Dropdown] = None
 FACE_SWAPPER_PIXEL_BOOST_DROPDOWN : Optional[gradio.Dropdown] = None

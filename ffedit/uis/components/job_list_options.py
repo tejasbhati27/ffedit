@@ -2,12 +2,12 @@ from typing import List, Optional
 
 import gradio
 
-import facefusion.choices
-from facefusion import state_manager, wording
-from facefusion.common_helper import get_first
-from facefusion.jobs import job_manager
-from facefusion.types import JobStatus
-from facefusion.uis.core import register_ui_component
+import ffedit.choices
+from ffedit import state_manager, wording
+from ffedit.common_helper import get_first
+from ffedit.jobs import job_manager
+from ffedit.types import JobStatus
+from ffedit.uis.core import register_ui_component
 
 JOB_LIST_JOB_STATUS_CHECKBOX_GROUP : Optional[gradio.CheckboxGroup] = None
 

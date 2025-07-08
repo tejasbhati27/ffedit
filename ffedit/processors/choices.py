@@ -1,8 +1,8 @@
 from typing import List, Sequence
 
-from facefusion.common_helper import create_float_range, create_int_range
-from facefusion.filesystem import get_file_name, resolve_file_paths, resolve_relative_path
-from facefusion.processors.types import AgeModifierModel, DeepSwapperModel, ExpressionRestorerModel, FaceDebuggerItem, FaceEditorModel, FaceEnhancerModel, FaceSwapperModel, FaceSwapperSet, FrameColorizerModel, FrameEnhancerModel, LipSyncerModel
+from ffedit.common_helper import create_float_range, create_int_range
+from ffedit.filesystem import get_file_name, resolve_file_paths, resolve_relative_path
+from ffedit.processors.types import AgeModifierModel, DeepSwapperModel, ExpressionRestorerModel, FaceDebuggerItem, FaceEditorModel, FaceEnhancerModel, FaceSwapperModel, FaceSwapperSet, FrameColorizerModel, FrameEnhancerModel, LipSyncerModel
 
 age_modifier_models : List[AgeModifierModel] = [ 'styleganex_age' ]
 deep_swapper_models : List[DeepSwapperModel] =\

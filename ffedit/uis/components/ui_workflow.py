@@ -2,9 +2,9 @@ from typing import Optional
 
 import gradio
 
-import facefusion
-from facefusion import state_manager, wording
-from facefusion.uis.core import register_ui_component
+import ffedit
+from ffedit import state_manager, wording
+from ffedit.uis.core import register_ui_component
 
 UI_WORKFLOW_DROPDOWN : Optional[gradio.Dropdown] = None
 

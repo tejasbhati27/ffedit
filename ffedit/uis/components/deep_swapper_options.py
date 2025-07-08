@@ -2,12 +2,12 @@ from typing import List, Optional, Tuple
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.common_helper import calc_int_step
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.core import load_processor_module
-from facefusion.processors.types import DeepSwapperModel
-from facefusion.uis.core import get_ui_component, register_ui_component
+from ffedit import state_manager, wording
+from ffedit.common_helper import calc_int_step
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.core import load_processor_module
+from ffedit.processors.types import DeepSwapperModel
+from ffedit.uis.core import get_ui_component, register_ui_component
 
 DEEP_SWAPPER_MODEL_DROPDOWN : Optional[gradio.Dropdown] = None
 DEEP_SWAPPER_MORPH_SLIDER : Optional[gradio.Slider] = None

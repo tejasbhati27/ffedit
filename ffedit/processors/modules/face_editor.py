@@ -5,25 +5,25 @@ from typing import List, Tuple
 import cv2
 import numpy
 
-import facefusion.jobs.job_manager
-import facefusion.jobs.job_store
-import facefusion.processors.core as processors
-from facefusion import config, content_analyser, face_classifier, face_detector, face_landmarker, face_masker, face_recognizer, inference_manager, logger, process_manager, state_manager, video_manager, wording
-from facefusion.common_helper import create_float_metavar
-from facefusion.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
-from facefusion.face_analyser import get_many_faces, get_one_face
-from facefusion.face_helper import paste_back, scale_face_landmark_5, warp_face_by_face_landmark_5
-from facefusion.face_masker import create_box_mask
-from facefusion.face_selector import find_similar_faces, sort_and_filter_faces
-from facefusion.face_store import get_reference_faces
-from facefusion.filesystem import in_directory, is_image, is_video, resolve_relative_path, same_file_extension
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.live_portrait import create_rotation, limit_euler_angles, limit_expression
-from facefusion.processors.types import FaceEditorInputs, LivePortraitExpression, LivePortraitFeatureVolume, LivePortraitMotionPoints, LivePortraitPitch, LivePortraitRoll, LivePortraitRotation, LivePortraitScale, LivePortraitTranslation, LivePortraitYaw
-from facefusion.program_helper import find_argument_group
-from facefusion.thread_helper import conditional_thread_semaphore, thread_semaphore
-from facefusion.types import ApplyStateItem, Args, DownloadScope, Face, FaceLandmark68, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
-from facefusion.vision import read_image, read_static_image, write_image
+import ffedit.jobs.job_manager
+import ffedit.jobs.job_store
+import ffedit.processors.core as processors
+from ffedit import config, content_analyser, face_classifier, face_detector, face_landmarker, face_masker, face_recognizer, inference_manager, logger, process_manager, state_manager, video_manager, wording
+from ffedit.common_helper import create_float_metavar
+from ffedit.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
+from ffedit.face_analyser import get_many_faces, get_one_face
+from ffedit.face_helper import paste_back, scale_face_landmark_5, warp_face_by_face_landmark_5
+from ffedit.face_masker import create_box_mask
+from ffedit.face_selector import find_similar_faces, sort_and_filter_faces
+from ffedit.face_store import get_reference_faces
+from ffedit.filesystem import in_directory, is_image, is_video, resolve_relative_path, same_file_extension
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.live_portrait import create_rotation, limit_euler_angles, limit_expression
+from ffedit.processors.types import FaceEditorInputs, LivePortraitExpression, LivePortraitFeatureVolume, LivePortraitMotionPoints, LivePortraitPitch, LivePortraitRoll, LivePortraitRotation, LivePortraitScale, LivePortraitTranslation, LivePortraitYaw
+from ffedit.program_helper import find_argument_group
+from ffedit.thread_helper import conditional_thread_semaphore, thread_semaphore
+from ffedit.types import ApplyStateItem, Args, DownloadScope, Face, FaceLandmark68, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
+from ffedit.vision import read_image, read_static_image, write_image
 
 
 @lru_cache(maxsize = None)

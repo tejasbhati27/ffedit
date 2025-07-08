@@ -7,9 +7,9 @@ from typing import Any, List
 
 from tqdm import tqdm
 
-from facefusion import logger, state_manager, wording
-from facefusion.exit_helper import hard_exit
-from facefusion.types import ProcessFrames, QueuePayload
+from ffedit import logger, state_manager, wording
+from ffedit.exit_helper import hard_exit
+from ffedit.types import ProcessFrames, QueuePayload
 
 PROCESSORS_METHODS =\
 [
@@ -30,7 +30,7 @@ PROCESSORS_METHODS =\
 
 def load_processor_module(processor : str) -> Any:
 	try:
-		processor_module = importlib.import_module('facefusion.processors.modules.' + processor)
+		processor_module = importlib.import_module('ffedit.processors.modules.' + processor)
 		for method_name in PROCESSORS_METHODS:
 			if not hasattr(processor_module, method_name):
 				raise NotImplementedError

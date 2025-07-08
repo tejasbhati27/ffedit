@@ -2,12 +2,12 @@ from typing import List, Optional, Tuple
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.common_helper import calc_int_step
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.core import load_processor_module
-from facefusion.processors.types import FrameEnhancerModel
-from facefusion.uis.core import get_ui_component, register_ui_component
+from ffedit import state_manager, wording
+from ffedit.common_helper import calc_int_step
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.core import load_processor_module
+from ffedit.processors.types import FrameEnhancerModel
+from ffedit.uis.core import get_ui_component, register_ui_component
 
 FRAME_ENHANCER_MODEL_DROPDOWN : Optional[gradio.Dropdown] = None
 FRAME_ENHANCER_BLEND_SLIDER : Optional[gradio.Slider] = None

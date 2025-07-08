@@ -5,20 +5,20 @@ from typing import List
 import cv2
 import numpy
 
-import facefusion.jobs.job_manager
-import facefusion.jobs.job_store
-import facefusion.processors.core as processors
-from facefusion import config, content_analyser, inference_manager, logger, process_manager, state_manager, video_manager, wording
-from facefusion.common_helper import create_int_metavar
-from facefusion.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
-from facefusion.execution import has_execution_provider
-from facefusion.filesystem import in_directory, is_image, is_video, resolve_relative_path, same_file_extension
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.types import FrameEnhancerInputs
-from facefusion.program_helper import find_argument_group
-from facefusion.thread_helper import conditional_thread_semaphore
-from facefusion.types import ApplyStateItem, Args, DownloadScope, Face, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
-from facefusion.vision import create_tile_frames, merge_tile_frames, read_image, read_static_image, write_image
+import ffedit.jobs.job_manager
+import ffedit.jobs.job_store
+import ffedit.processors.core as processors
+from ffedit import config, content_analyser, inference_manager, logger, process_manager, state_manager, video_manager, wording
+from ffedit.common_helper import create_int_metavar
+from ffedit.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
+from ffedit.execution import has_execution_provider
+from ffedit.filesystem import in_directory, is_image, is_video, resolve_relative_path, same_file_extension
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.types import FrameEnhancerInputs
+from ffedit.program_helper import find_argument_group
+from ffedit.thread_helper import conditional_thread_semaphore
+from ffedit.types import ApplyStateItem, Args, DownloadScope, Face, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
+from ffedit.vision import create_tile_frames, merge_tile_frames, read_image, read_static_image, write_image
 
 
 @lru_cache(maxsize = None)

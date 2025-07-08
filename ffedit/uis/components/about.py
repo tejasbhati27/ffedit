@@ -3,7 +3,7 @@ from typing import Optional
 
 import gradio
 
-from facefusion import metadata, wording
+from ffedit import metadata, wording
 
 METADATA_BUTTON : Optional[gradio.Button] = None
 ACTION_BUTTON : Optional[gradio.Button] = None

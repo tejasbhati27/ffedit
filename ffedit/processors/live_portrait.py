@@ -3,7 +3,7 @@ from typing import Tuple
 import numpy
 import scipy
 
-from facefusion.processors.types import LivePortraitExpression, LivePortraitPitch, LivePortraitRoll, LivePortraitRotation, LivePortraitYaw
+from ffedit.processors.types import LivePortraitExpression, LivePortraitPitch, LivePortraitRoll, LivePortraitRotation, LivePortraitYaw
 
 EXPRESSION_MIN = numpy.array(
 [

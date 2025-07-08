@@ -2,11 +2,11 @@ from typing import List, Optional, Tuple
 
 import gradio
 
-from facefusion import state_manager, wording
-from facefusion.common_helper import get_first
-from facefusion.filesystem import filter_audio_paths, filter_image_paths, has_audio, has_image
-from facefusion.uis.core import register_ui_component
-from facefusion.uis.types import File
+from ffedit import state_manager, wording
+from ffedit.common_helper import get_first
+from ffedit.filesystem import filter_audio_paths, filter_image_paths, has_audio, has_image
+from ffedit.uis.core import register_ui_component
+from ffedit.uis.types import File
 
 SOURCE_FILE : Optional[gradio.File] = None
 SOURCE_AUDIO : Optional[gradio.Audio] = None

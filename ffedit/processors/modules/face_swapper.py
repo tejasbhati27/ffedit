@@ -5,28 +5,28 @@ from typing import List, Tuple
 import cv2
 import numpy
 
-import facefusion.choices
-import facefusion.jobs.job_manager
-import facefusion.jobs.job_store
-import facefusion.processors.core as processors
-from facefusion import config, content_analyser, face_classifier, face_detector, face_landmarker, face_masker, face_recognizer, inference_manager, logger, process_manager, state_manager, video_manager, wording
-from facefusion.common_helper import get_first
-from facefusion.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
-from facefusion.execution import has_execution_provider
-from facefusion.face_analyser import get_average_face, get_many_faces, get_one_face
-from facefusion.face_helper import paste_back, warp_face_by_face_landmark_5
-from facefusion.face_masker import create_area_mask, create_box_mask, create_occlusion_mask, create_region_mask
-from facefusion.face_selector import find_similar_faces, sort_and_filter_faces, sort_faces_by_order
-from facefusion.face_store import get_reference_faces
-from facefusion.filesystem import filter_image_paths, has_image, in_directory, is_image, is_video, resolve_relative_path, same_file_extension
-from facefusion.model_helper import get_static_model_initializer
-from facefusion.processors import choices as processors_choices
-from facefusion.processors.pixel_boost import explode_pixel_boost, implode_pixel_boost
-from facefusion.processors.types import FaceSwapperInputs
-from facefusion.program_helper import find_argument_group
-from facefusion.thread_helper import conditional_thread_semaphore
-from facefusion.types import ApplyStateItem, Args, DownloadScope, Embedding, Face, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
-from facefusion.vision import read_image, read_static_image, read_static_images, unpack_resolution, write_image
+import ffedit.choices
+import ffedit.jobs.job_manager
+import ffedit.jobs.job_store
+import ffedit.processors.core as processors
+from ffedit import config, content_analyser, face_classifier, face_detector, face_landmarker, face_masker, face_recognizer, inference_manager, logger, process_manager, state_manager, video_manager, wording
+from ffedit.common_helper import get_first
+from ffedit.download import conditional_download_hashes, conditional_download_sources, resolve_download_url
+from ffedit.execution import has_execution_provider
+from ffedit.face_analyser import get_average_face, get_many_faces, get_one_face
+from ffedit.face_helper import paste_back, warp_face_by_face_landmark_5
+from ffedit.face_masker import create_area_mask, create_box_mask, create_occlusion_mask, create_region_mask
+from ffedit.face_selector import find_similar_faces, sort_and_filter_faces, sort_faces_by_order
+from ffedit.face_store import get_reference_faces
+from ffedit.filesystem import filter_image_paths, has_image, in_directory, is_image, is_video, resolve_relative_path, same_file_extension
+from ffedit.model_helper import get_static_model_initializer
+from ffedit.processors import choices as processors_choices
+from ffedit.processors.pixel_boost import explode_pixel_boost, implode_pixel_boost
+from ffedit.processors.types import FaceSwapperInputs
+from ffedit.program_helper import find_argument_group
+from ffedit.thread_helper import conditional_thread_semaphore
+from ffedit.types import ApplyStateItem, Args, DownloadScope, Embedding, Face, InferencePool, ModelOptions, ModelSet, ProcessMode, QueuePayload, UpdateProgress, VisionFrame
+from ffedit.vision import read_image, read_static_image, read_static_images, unpack_resolution, write_image
 
 
 @lru_cache(maxsize = None)

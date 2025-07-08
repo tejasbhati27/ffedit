@@ -7,9 +7,9 @@ from typing import Optional
 import gradio
 from tqdm import tqdm
 
-import facefusion.choices
-from facefusion import logger, state_manager, wording
-from facefusion.types import LogLevel
+import ffedit.choices
+from ffedit import logger, state_manager, wording
+from ffedit.types import LogLevel
 
 LOG_LEVEL_DROPDOWN : Optional[gradio.Dropdown] = None
 TERMINAL_TEXTBOX : Optional[gradio.Textbox] = None

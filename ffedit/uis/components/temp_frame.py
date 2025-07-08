@@ -2,11 +2,11 @@ from typing import Optional
 
 import gradio
 
-import facefusion.choices
-from facefusion import state_manager, wording
-from facefusion.filesystem import is_video
-from facefusion.types import TempFrameFormat
-from facefusion.uis.core import get_ui_component
+import ffedit.choices
+from ffedit import state_manager, wording
+from ffedit.filesystem import is_video
+from ffedit.types import TempFrameFormat
+from ffedit.uis.core import get_ui_component
 
 TEMP_FRAME_FORMAT_DROPDOWN : Optional[gradio.Dropdown] = None
 

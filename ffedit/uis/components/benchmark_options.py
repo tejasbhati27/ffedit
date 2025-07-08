@@ -2,9 +2,9 @@ from typing import Optional
 
 import gradio
 
-import facefusion.choices
-from facefusion import wording
-from facefusion.uis.core import register_ui_component
+import ffedit.choices
+from ffedit import wording
+from ffedit.uis.core import register_ui_component
 
 BENCHMARK_RESOLUTIONS_CHECKBOX_GROUP : Optional[gradio.CheckboxGroup] = None
 BENCHMARK_CYCLE_COUNT_SLIDER : Optional[gradio.Button] = None

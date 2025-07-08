@@ -2,14 +2,14 @@ from typing import Optional, Tuple
 
 import gradio
 
-import facefusion.choices
-from facefusion import state_manager, wording
-from facefusion.common_helper import calc_int_step
-from facefusion.ffmpeg import get_available_encoder_set
-from facefusion.filesystem import is_image, is_video
-from facefusion.types import AudioEncoder, Fps, VideoEncoder, VideoPreset
-from facefusion.uis.core import get_ui_components, register_ui_component
-from facefusion.vision import create_image_resolutions, create_video_resolutions, detect_image_resolution, detect_video_fps, detect_video_resolution, pack_resolution
+import ffedit.choices
+from ffedit import state_manager, wording
+from ffedit.common_helper import calc_int_step
+from ffedit.ffmpeg import get_available_encoder_set
+from ffedit.filesystem import is_image, is_video
+from ffedit.types import AudioEncoder, Fps, VideoEncoder, VideoPreset
+from ffedit.uis.core import get_ui_components, register_ui_component
+from ffedit.vision import create_image_resolutions, create_video_resolutions, detect_image_resolution, detect_video_fps, detect_video_resolution, pack_resolution
 
 OUTPUT_IMAGE_QUALITY_SLIDER : Optional[gradio.Slider] = None
 OUTPUT_IMAGE_RESOLUTION_DROPDOWN : Optional[gradio.Dropdown] = None

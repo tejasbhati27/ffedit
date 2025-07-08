@@ -2,11 +2,11 @@ from typing import Optional
 
 import gradio
 
-import facefusion.choices
-from facefusion import face_landmarker, state_manager, wording
-from facefusion.common_helper import calc_float_step
-from facefusion.types import FaceLandmarkerModel, Score
-from facefusion.uis.core import register_ui_component
+import ffedit.choices
+from ffedit import face_landmarker, state_manager, wording
+from ffedit.common_helper import calc_float_step
+from ffedit.types import FaceLandmarkerModel, Score
+from ffedit.uis.core import register_ui_component
 
 FACE_LANDMARKER_MODEL_DROPDOWN : Optional[gradio.Dropdown] = None
 FACE_LANDMARKER_SCORE_SLIDER : Optional[gradio.Slider] = None
