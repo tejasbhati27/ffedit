@@ -85,7 +85,7 @@ def register_args(program : ArgumentParser) -> None:
 	if group_processors:
 		group_processors.add_argument('--age-modifier-model', help = wording.get('help.age_modifier_model'), default = config.get_str_value('processors', 'age_modifier_model', 'styleganex_age'), choices = processors_choices.age_modifier_models)
 		group_processors.add_argument('--age-modifier-direction', help = wording.get('help.age_modifier_direction'), type = int, default = config.get_int_value('processors', 'age_modifier_direction', '0'), choices = processors_choices.age_modifier_direction_range, metavar = create_int_metavar(processors_choices.age_modifier_direction_range))
-		facefusion.jobs.job_store.register_step_keys([ 'age_modifier_model', 'age_modifier_direction' ])
+		ffedit.jobs.job_store.register_step_keys([ 'age_modifier_model', 'age_modifier_direction' ])
 
 
 def apply_args(args : Args, apply_state_item : ApplyStateItem) -> None:
@@ -165,7 +165,7 @@ def forward(crop_vision_frame : VisionFrame, extend_vision_frame : VisionFrame, 
 	age_modifier_inputs = {}
 
 	if has_execution_provider('coreml'):
-		age_modifier.set_providers([ facefusion.choices.execution_provider_set.get('cpu') ])
+		age_modifier.set_providers([ ffedit.choices.execution_provider_set.get('cpu') ])
 
 	for age_modifier_input in age_modifier.get_inputs():
 		if age_modifier_input.name == 'target':

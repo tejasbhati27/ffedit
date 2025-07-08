@@ -33,7 +33,7 @@ def register_args(program : ArgumentParser) -> None:
 	group_processors = find_argument_group(program, 'processors')
 	if group_processors:
 		group_processors.add_argument('--face-debugger-items', help = wording.get('help.face_debugger_items').format(choices = ', '.join(processors_choices.face_debugger_items)), default = config.get_str_list('processors', 'face_debugger_items', 'face-landmark-5/68 face-mask'), choices = processors_choices.face_debugger_items, nargs = '+', metavar = 'FACE_DEBUGGER_ITEMS')
-		facefusion.jobs.job_store.register_step_keys([ 'face_debugger_items' ])
+		ffedit.jobs.job_store.register_step_keys([ 'face_debugger_items' ])
 
 
 def apply_args(args : Args, apply_state_item : ApplyStateItem) -> None:

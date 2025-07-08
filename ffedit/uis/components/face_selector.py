@@ -147,7 +147,7 @@ def update_face_selector_mode(face_selector_mode : FaceSelectorMode) -> Tuple[gr
 
 
 def update_face_selector_order(face_analyser_order : FaceSelectorOrder) -> gradio.Gallery:
-	state_manager.set_item('face_selector_order', convert_str_none(face_analyser_order))
+	state_manager.set_item('face_selector_order', convert_str_none(face_selector_order))
 	return update_reference_position_gallery()
 
 
