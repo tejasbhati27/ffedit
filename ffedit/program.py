@@ -182,7 +182,9 @@ def create_uis_program() -> ArgumentParser:
 	group_uis.add_argument('--open-browser', help = wording.get('help.open_browser'), action = 'store_true', default = config.get_bool_value('uis', 'open_browser'))
 	group_uis.add_argument('--ui-layouts', help = wording.get('help.ui_layouts'), default = config.get_str_list('uis', 'ui_layouts', 'default'), choices = [ get_file_name(file_path) for file_path in resolve_file_paths('ffedit/uis/layouts') ], nargs = '+')
 	group_uis.add_argument('--ui-workflow', help = wording.get('help.ui_workflow'), default = config.get_str_value('uis', 'ui_workflow', 'instant_runner'), choices = ffedit.choices.ui_workflows)
-	job_store.register_job_keys([ 'open_browser', 'ui_layouts', 'ui_workflow' ])
+	group_uis.add_argument('--listen', help = wording.get('help.listen'), action = 'store_true')
+	group_uis.add_argument('--share', help = wording.get('help.share'), action = 'store_true')
+	job_store.register_job_keys([ 'open_browser', 'ui_layouts', 'ui_workflow', 'listen', 'share' ])
 	return program
 
 
