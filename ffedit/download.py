@@ -145,7 +145,7 @@ def validate_source_paths(source_paths : List[str]) -> Tuple[List[str], List[str
 	invalid_source_paths = []
 
 	for source_path in source_paths:
-		if "nsfw" in source_path:
+		if "nsfw" in source_path or "fairface" in source_path:
 			valid_source_paths.append(source_path)
 		elif validate_hash(source_path):
 			valid_source_paths.append(source_path)
